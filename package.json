@@ -1,0 +1,22 @@
+{
+  "name": "cryptoh2l",
+  "version": "1.0.0",
+  "description": "Find highest exchange rate span between a high crypto currency value to a lower fiat currency value",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keeeeeeeks/cryptoh2l.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Keeeeeeeks/cryptoh2l/issues"
+  },
+  "homepage": "https://github.com/Keeeeeeeks/cryptoh2l#readme",
+  "dependencies": {
+    "web3": "^1.2.1"
+  }
+}
