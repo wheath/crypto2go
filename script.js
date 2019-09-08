@@ -83,7 +83,7 @@ $("#submit_btn").click(function() {
 
 });
 
-$(document).on('click',"[id$=_fiat_btn]", function() {
+$(document).on('click',"[id$=_uma_btn]", function() {
   var id_parts = this.id.split("_");
   
   console.log("_dbg fiat symbol: "+ id_parts[0]+" id: " + this.id +  " button clicked")
@@ -96,7 +96,7 @@ $(document).on('click',"[id$=_fiat_btn]", function() {
       //alert("Only Chinese Yuan supported at this time")
       var web3 = window.web3
       var value =  web3.toWei("0.001", "ether")
-      var toAddress = "0xa00e47c8fBE274aB3C24b08081D661C8536Bc80C".toLowerCase()
+      var toAddress = "0x2064CDC3A944847712285FF1713CAC127c46eCA6".toLowerCase()
      window.ethereum.enable().then(() => {
         web3.eth.defaultAccount = web3.eth.accounts[0]
         var data = "deadbeef"
