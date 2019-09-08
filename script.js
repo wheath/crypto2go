@@ -89,7 +89,7 @@ $(document).on('click',"[id$=_uma_btn]", function() {
   console.log("_dbg fiat symbol: "+ id_parts[0]+" id: " + this.id +  " button clicked")
   var crypto_symbl = $('#choose_cryptocrncy_dropdown').val();
    
-  if (crypto_symbl === "ETH") {
+
     if (id_parts[0] === "CNY") {
       /*window.location.href = "https://localethereum.com";*/
       var web3 = window.web3
@@ -101,14 +101,10 @@ $(document).on('click',"[id$=_uma_btn]", function() {
         console.log("_dbg about to send ethereum to remote agent", data, web3.eth, value,  web3.eth.accounts[0], toAddress)
       
         web3.eth.sendTransaction({from: web3.eth.accounts[0], to:toAddress, value: value}, (err, txhash) => console.log({err, txhash} ))
-     
       })
     } else {
       alert("Only Chinese Yuan supported at this time")      
     }
-  } else {
-    alert("Only Ethereum cryptocurrency supported at this time") 
-  }
 });  
   
 $("#CNY_uma_btn").on("click", function() {
