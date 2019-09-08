@@ -1,8 +1,74 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>cryptoh2l home page</title>	    
+    <title>Eth Demo</title>
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tingle.min.css">
   </head>
   <body>
-    cryptoh2l home page
+    <header>
+      <div class="hs-logo"><img src="./images/crypto2Go.png" width="100px" alt="">
+        <h1 class="title">Crypto2go</h1>
+      </div>
+      <div class="options"><a class="options-link link-active" href="#">Home</a><a class="options-link" href="https://commerce.coinbase.com/charges/HNVWRE2D" target="_blank">Donate</a><a class="options-link" href="#">Merchant List</a><a class="options-link" href="#">Sign Up</a></div>
+    </header>
+    <main>
+      <section class="bigtitle">
+        <h2 class="bigtitle-title">&nbsp;</h2>
+        <div class="content">
+          <p>Some Text goes here, some text goes here, some text goes here, some text goes here.</p>
+          <!-- button.bg-blue-500.text-white.font-bold.py-2.px-4.rounded(class='hover:bg-blue-100') Button123--><br><span class="hs-select">Choose Crypto Currency: </span>
+          <select id="choose_cryptocrncy_dropdown"></select>
+          <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-100" id="submit_btn">Submit</button><br><br><br><br>
+          <table id="exchngRateTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Amount</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+      <div class="tingle-demo-tiny-1">
+        <div class="hs-drop">
+          <div>Chinese Yuan price Index</div>
+          <select class="hs-ddown" id="sp-price">
+            <option value="1">CNY/USD (CR=102%)</option>
+          </select>
+        </div>
+        <div class="hs-drop">
+          <div>What is the last day you will stay in China </div>
+          <select class="hs-ddown" id="sp-time">
+            <option value="1">September 30, 2019</option>
+          </select>
+        </div>
+        <div class="hs-drop"><span class="hs-box">
+            <p class="hs-items">
+              <input type="text" value="7.12" size="2">
+            </p><br><img src="./images/sym1.png" width="150px"><br><br><br>
+            <p class="hs-items">CNY</p><br><br></span><span class="hs-boxspace">&nbsp;</span><span class="hs-box">
+            <p class="hs-items">
+              <input type="text" value="1" size="2">
+            </p><br><img src="./images/sym2.png" width="150px">
+            <p class="hs-items">DAI (USD)</p><br><br></span></div>
+        <div class="hs-buyit">
+          <center>
+            <p>Minimum ratio: 102%</p>
+            <p>Crypto2go fee: 10%</p>
+            <p>Current price [CNY/USD]: $0.1405</p>
+            <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-100" id="submit_btn">Buy</button>
+          </center>
+        </div>
+      </div>
+    </main>
+    <script src="jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="tingle.min.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
