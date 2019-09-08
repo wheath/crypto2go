@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eth Demo</title>
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tingle.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="hs-logo"><img src="./images/crypto2Go.png" width="100px" alt="">
+        <h1 class="title">Crypto2go</h1>
+      </div>
+      <div class="options"><a class="options-link link-active" href="#">Home</a><a class="options-link" href="https://commerce.coinbase.com/charges/HNVWRE2D" target="_blank">Donate</a><a class="options-link" href="#">Merchant List</a><a class="options-link" href="#">Sign Up</a></div>
+    </header>
+    <main>
+      <section class="bigtitle">
+        <h2 class="bigtitle-title">&nbsp;</h2>
+        <div class="content">
+          <p>Merchant List is coming soon!</p>
+          <!-- button.bg-blue-500.text-white.font-bold.py-2.px-4.rounded(class='hover:bg-blue-100') Button123--><br><span class="hs-select">Choose Crypto Currency: </span>
+          <select id="choose_cryptocrncy_dropdown"></select>
+          <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-100" id="submit_btn">Submit</button><br><br><br><br>
+          <table id="exchngRateTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Amount</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="tingle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
