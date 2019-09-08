@@ -91,11 +91,9 @@ $(document).on('click',"[id$=_uma_btn]", function() {
    
   if (crypto_symbl === "ETH") {
     if (id_parts[0] === "CNY") {
-      window.location.href = "https://localethereum.com";
-    } else {
-      //alert("Only Chinese Yuan supported at this time")
+      /*window.location.href = "https://localethereum.com";*/
       var web3 = window.web3
-      var value =  web3.toWei("0.001", "ether")
+      var value =  web3.toWei("0.1", "ether")
       var toAddress = "0x2064CDC3A944847712285FF1713CAC127c46eCA6".toLowerCase()
      window.ethereum.enable().then(() => {
         web3.eth.defaultAccount = web3.eth.accounts[0]
@@ -105,14 +103,15 @@ $(document).on('click',"[id$=_uma_btn]", function() {
         web3.eth.sendTransaction({from: web3.eth.accounts[0], to:toAddress, value: value}, (err, txhash) => console.log({err, txhash} ))
      
       })
-      
+    } else {
+      alert("Only Chinese Yuan supported at this time")      
     }
   } else {
-    alert("Only Ethereum crypto currency supported at this time") 
+    alert("Only Ethereum cryptocurrency supported at this time") 
   }
 });  
   
-$("#CNY_fiat_btn").on("click", function() {
+$("#CNY_uma_btn").on("click", function() {
   console.log("_dbg  fiat button clicked")
 
 });
