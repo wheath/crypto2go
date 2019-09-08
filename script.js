@@ -89,13 +89,6 @@ $(document).on('click',"[id$=_uma_btn]", function() {
   console.log("_dbg fiat symbol: "+ id_parts[0]+" id: " + this.id +  " button clicked")
   var crypto_symbl = $('#choose_cryptocrncy_dropdown').val();
    
-
-$(document).on('click',"[id$=_uma_btn]", function() {
-  var id_parts = this.id.split("_");
-  
-  console.log("_dbg fiat symbol: "+ id_parts[0]+" id: " + this.id +  " button clicked")
-  var crypto_symbl = $('#choose_cryptocrncy_dropdown').val();
-   
       /*window.location.href = "https://localethereum.com";*/
       var web3 = window.web3
       var value =  web3.toWei("0.1", "ether")
