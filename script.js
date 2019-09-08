@@ -2,6 +2,7 @@
 
 $(function() {
   console.log("_dbg in jquery initialize function")
+  console.log(window.web3)
 
 
   $.getJSON( "fiatsymbl_to_name.json", function( data ) {
@@ -82,6 +83,35 @@ $("#submit_btn").click(function() {
 
 });
 
+$(document).on('click',"[id$=_fiat_btn]", function() {
+  var id_parts = this.id.split("_");
+  
+  console.log("_dbg fiat symbol: "+ id_parts[0]+" id: " + this.id +  " button clicked")
+  var crypto_symbl = $('#choose_cryptocrncy_dropdown').val();
+   
+  if (crypto_symbl === "ETH") {
+    if (id_parts[0] === "CNY") {
+      window.location.href = "https://localethereum.com";
+    } else {
+      //alert("Only Chinese Yuan supported at this time")
+      var web3 = window.web3
+      var value =  web3.toWei("0.001", "ether")
+      var toAddress = "0xa00e47c8fBE274aB3C24b08081D661C8536Bc80C".toLowerCase()
+     window.ethereum.enable().then(() => {
+        web3.eth.defaultAccount = web3.eth.accounts[0]
+        var data = "deadbeef"
+        console.log("_dbg about to send ethereum to remote agent", data, web3.eth, value,  web3.eth.accounts[0], toAddress)
+      
+        web3.eth.sendTransaction({from: web3.eth.accounts[0], to:toAddress, value: value}, (err, txhash) => console.log({err, txhash} ))
+     
+      })
+      
+    }
+  } else {
+    alert("Only Ethereum crypto currency supported at this time") 
+  }
+});  
+  
 $("#CNY_fiat_btn").on("click", function() {
   console.log("_dbg  fiat button clicked")
 
