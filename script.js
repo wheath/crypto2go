@@ -77,19 +77,28 @@ $("#submit_btn").click(function() {
   console.log("_dbg numUSDto1Crypto: " + numUSDto1Crypto)
 
   $.each(window.fiat_to_usd, function( key, val ) {
-    $('#exchngRateTable tbody').append("<tr><td>"+window.fiatsymbl_to_name[key]+"</td><td>"+key+"</td><td>"+numUSDto1Crypto*val+"</td><td><button class=\"hs-modal bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-100\"  type=\"button\">Contact Your Local Agent</button></td></tr>");
+     if (crypto_symbl === "ETH" && key === "CNY") {
+       $('#exchngRateTable tbody').append("<tr><td>"+window.fiatsymbl_to_name[key]+"</td><td>"+key+"</td><td>"+numUSDto1Crypto*val+"</td><td><button id=\""+key+"_fiat_btn\" class=\"hs-modal bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-100\"  type=\"button\">Get Digital "+key+"</button></td></tr>");
+     } else {
+       $('#exchngRateTable tbody').append("<tr><td>"+window.fiatsymbl_to_name[key]+"</td><td>"+key+"</td><td>"+numUSDto1Crypto*val+"</td><td><button id=\""+key+"_fiat_btn\" class=\"hs-modal bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-100\"  type=\"button\">Contact Your Remote Agent</button></td></tr>");
+     }
 
   });
 
 });
 
-$(document).on('click',"[id$=_uma_btn]", function() {
+$(document).on('click',"[id$=_fiat_btn]", function() {
   var id_parts = this.id.split("_");
   
   console.log("_dbg fiat symbol: "+ id_parts[0]+" id: " + this.id +  " button clicked")
+  console.log("_dbg uma symbol: "+ id_parts[1]+" id: " + this.id +  " button clicked")
   var crypto_symbl = $('#choose_cryptocrncy_dropdown').val();
+
+  if (crypto_symbl === "ETH") {
+    if (id_parts[0] === "CNY") {
    
-      /*window.location.href = "https://localethereum.com";*/
+      //window.location.href = "https://localethereum.com";
+    } else {
       var web3 = window.web3
       var value =  web3.toWei("0.1", "ether")
       var toAddress = "0x2064CDC3A944847712285FF1713CAC127c46eCA6".toLowerCase()
@@ -100,13 +109,49 @@ $(document).on('click',"[id$=_uma_btn]", function() {
       
         web3.eth.sendTransaction({from: web3.eth.accounts[0], to:toAddress, value: value}, (err, txhash) => console.log({err, txhash} ))
       })
+      
+    }
+    } else {
+      alert("Only Ethereum crypto currency supported at this time")
+    }
   
 });  
-  
+
+/*
 $("#CNY_uma_btn").on("click", function() {
   console.log("_dbg  fiat button clicked")
 
 });
+*/
+
+$(document).on('click',"[id$=_uma_btn]", function() {
+  var id_parts = this.id.split("_");
+  
+  console.log("_dbg uma button clicked")
+  var crypto_symbl = $('#choose_cryptocrncy_dropdown').val();
+
+  if (crypto_symbl === "ETH") {
+    if (id_parts[0] === "CNY") {
+   
+      //window.location.href = "https://localethereum.com";
+    } else {
+      var web3 = window.web3
+      var value =  web3.toWei("0.1", "ether")
+      var toAddress = "0x2064CDC3A944847712285FF1713CAC127c46eCA6".toLowerCase()
+     window.ethereum.enable().then(() => {
+        web3.eth.defaultAccount = web3.eth.accounts[0]
+        var data = "deadbeef"
+        console.log("_dbg about to send ethereum to remote agent", data, web3.eth, value,  web3.eth.accounts[0], toAddress)
+      
+        web3.eth.sendTransaction({from: web3.eth.accounts[0], to:toAddress, value: value}, (err, txhash) => console.log({err, txhash} ))
+      })
+      
+    }
+    } else {
+      alert("Only Ethereum crypto currency supported at this time")
+    }
+  
+});  
 
 
 
