@@ -1,0 +1,143 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  background-color: #34495e;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #34495e;
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px 0;
+}
+.title {
+  font-size: 2.6em;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  margin-left: 15px;
+}
+h2 {
+  font-size: 1.4em;
+  padding: 10px;
+}
+p {
+  margin-bottom: 1em;
+  padding: 0 10px;
+}
+.options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 10px;
+  border-top: 3px solid #3498db;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.options-link {
+  text-decoration: none;
+  font-size: 20px;
+  color: #3498db;
+}
+section {
+  border-top: 3px solid #3498db;
+  border-radius: 3px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.bigtitle {
+  padding: 0;
+}
+.bigtitle-title {
+  color: #fff;
+  background-color: #3498db;
+  margin-bottom: 10px;
+}
+.content {
+  margin-top: 20px;
+  padding: 0px 35px;
+}
+.hs-select {
+  font-size: 18px;
+}
+#choose_cryptocrncy_dropdown {
+  font-size: 18px;
+  padding: 10px;
+}
+.hs-ddown {
+  font-size: 18px;
+  padding: 10px;
+}
+.hs-drop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.hs-drop div {
+  padding: 0px 20px;
+  width: 50%;
+  text-align: center;
+}
+.hs-box {
+  border: 1px solid #444;
+  padding: 0px 50px;
+}
+.hs-items {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+.hs-items input {
+  border: 1px solid #444;
+  text-align: center;
+}
+.hs-boxspace {
+  width: 10%;
+}
+.hs-buyit {
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
+.tingle-demo-tiny-1 {
+  display: none;
+}
+.hs-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.tingle-demo-tiny-1xxx {
+  border: 1px solid #222;
+}
+table#exchngRateTable {
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+table#exchngRateTable td {
+  padding: 4px;
+}
